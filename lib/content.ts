@@ -384,6 +384,8 @@ export const LOCATION_COPY = {
 export const FAQ_PAGE_INTRO =
   "This Preserve North FAQ answers the questions buyers actually type: who is building it, how Phase 4 differs from Preserve West, what the deposit might look like, which schools and trails are planned, and how VIP registration works. Every answer below is written to stand alone if quoted by an answer engine. Unreleased figures stay labelled as to be announced. Last updated: September 1, 2026.";
 
+export type FaqItem = { q: string; a: string };
+
 
 export const FAQS: FaqItem[] = [
   {
