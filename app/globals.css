@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+/* Palette is a placeholder pending Mattamy Homes' official Preserve North brand assets. */
+@theme {
+  --color-brand-primary: #2B2B28;
+  --color-brand-deep: #171715;
+  --color-brand-accent: #9C7A3C;
+  --color-on-brand: #ffffff;
+  --color-on-accent: #171715;
+
+  --color-surface: #F5F2EC;
+  --color-surface-alt: #EAE4D8;
+  --color-surface-card: #fffdf8;
+
+  --color-text-primary: #201F1C;
+  --color-text-muted: #61594C;
+  --color-border: #D8D0BE;
+
+  --color-success: #2f6b4f;
+  --color-error: #8b2e2e;
+
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(23, 23, 21, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-accent);
+  outline-offset: 3px;
+}
+
+.prose-measure {
+  max-width: 70ch;
+}
+
+.section-space {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-space {
+    padding-block: 7.5rem;
+  }
+}
+
+.card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  box-shadow: var(--shadow-card);
+}
+
+.stat-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-brand-accent);
+  border-radius: 2px;
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem 1.35rem;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  background: var(--color-brand-deep);
+  color: var(--color-surface);
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@layer base {
+  a {
+    color: inherit;
+  }
+}
+
+a.btn-primary,
+button.btn-primary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 2px;
+  padding: 0.65rem 1.15rem;
+  background-color: #9C7A3C;
+  color: #171715;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: balance;
+  white-space: normal;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  a.btn-primary,
+  button.btn-primary {
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 18px;
+  }
+}
+
+a.btn-primary:hover,
+button.btn-primary:hover:not(:disabled) {
+  background-color: #866834;
+  color: #171715;
+}
+
+a.btn-primary:focus-visible,
+button.btn-primary:focus-visible {
+  outline: 2px solid #9C7A3C;
+  outline-offset: 3px;
+}
+
+a.btn-primary.btn-compact {
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+}
+
+a.btn-ghost {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(245, 242, 236, 0.75);
+  border-radius: 2px;
+  padding: 0.65rem 1.15rem;
+  background-color: transparent;
+  color: #F5F2EC;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+}
+
+@media (min-width: 768px) {
+  a.btn-ghost {
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 18px;
+  }
+}
+
+a.btn-ghost:hover {
+  background-color: rgba(245, 242, 236, 0.12);
+  color: #F5F2EC;
+}
+
+.badge-status {
+  display: inline-block;
+  border-radius: 999px;
+  background-color: #9C7A3C;
+  color: #171715;
+  padding: 0.25rem 0.75rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  color: var(--color-brand-deep);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+button.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 479px) {
+  .stack-table thead {
+    display: none;
+  }
+
+  .stack-table,
+  .stack-table tbody,
+  .stack-table tr,
+  .stack-table th,
+  .stack-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .stack-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-card);
+    padding: 0.5rem 0;
+  }
+
+  .stack-table th {
+    border-bottom: 0;
+    padding-bottom: 0.15rem;
+  }
+
+  .stack-table td {
+    border-bottom: 0;
+    padding-top: 0.15rem;
+  }
+}
