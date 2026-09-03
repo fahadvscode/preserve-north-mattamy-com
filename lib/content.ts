@@ -23,7 +23,7 @@ export const LAST_UPDATED_ISO = "2026-09-01";
 export const STATUS = "Coming Soon — Registration Open";
 export const STATUS_BADGE = "Coming Soon — Registration Open";
 export const TAGLINE = "Where New Feels Established";
-export const SITE_SOURCE = "mattamy_com";
+export const SITE_SOURCE = "preservenorthmattamy.com";
 
 export const GEO = {
   // [UNVERIFIED — approximate] centroid of the North Oakville East Secondary Plan

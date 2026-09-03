@@ -1,6 +1,5 @@
--- Verify the shared preserve_north_leads table exists before proceeding.
--- If this query returns no rows, run the full DDL from preservenorthhomes.com's
--- 001_create_leads.sql migration first, then re-run this check.
+-- Shared Preserve North leads table.
+-- This site inserts site_source = 'preservenorthmattamy.com'.
 select to_regclass('public.preserve_north_leads') as leads_table_exists;
 
 -- Idempotent safety net — only creates the table if it is genuinely missing;
