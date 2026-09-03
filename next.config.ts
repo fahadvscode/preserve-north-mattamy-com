@@ -24,6 +24,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/sitemap/sitemap.xml",
+        headers: [
+          { key: "Content-Type", value: "application/xml; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
+          { key: "Content-Disposition", value: "inline" },
+        ],
+      },
+      {
         source: "/llms.txt",
         headers: [
           { key: "Content-Type", value: "text/plain; charset=utf-8" },
@@ -38,6 +46,13 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: "/sitemap.xml/", destination: "/sitemap.xml" },
+      ],
+    };
   },
   async redirects() {
     return [
