@@ -457,7 +457,6 @@ export const FAQS: FaqItem[] = [
 export const REGISTER_LEDE =
   "Registering for Preserve North community updates is how buyers typically receive first access to floor plans and pricing when they are released, plus advance notice of the VIP launch date. There is no purchase obligation and no cost to register.";
 
-/** Keep public/sitemap.xml in sync when this list or LAST_UPDATED_ISO changes. */
 export const SITEMAP_ROUTES: {
   path: string;
   changeFrequency: "weekly" | "monthly" | "yearly";

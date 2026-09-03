@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/content";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      { userAgent: "Googlebot", allow: "/" },
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "OAI-SearchBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },
@@ -17,6 +18,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Bingbot", allow: "/" },
       { userAgent: "*", allow: "/" },
     ],
-    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/sitemap/sitemap.xml`],
+    sitemap: `${SITE_URL}/sitemap/sitemap.xml`,
   };
 }

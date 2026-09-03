@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "Content-Type", value: "application/xml; charset=utf-8" },
           { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
-          { key: "Content-Disposition", value: "inline" },
         ],
       },
       {
@@ -28,7 +27,6 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "Content-Type", value: "application/xml; charset=utf-8" },
           { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
-          { key: "Content-Disposition", value: "inline" },
         ],
       },
       {
@@ -46,13 +44,6 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
-  },
-  async rewrites() {
-    return {
-      beforeFiles: [
-        { source: "/sitemap.xml/", destination: "/sitemap.xml" },
-      ],
-    };
   },
   async redirects() {
     return [
