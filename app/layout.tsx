@@ -44,6 +44,13 @@ export const metadata: Metadata = {
     template: "%s",
   },
   applicationName: SITE_NAME,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/icon", type: "image/png", sizes: "96x96" },
+    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
   ...(gscReady || bingReady
     ? {
         verification: {

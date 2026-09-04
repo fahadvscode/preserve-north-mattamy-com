@@ -15,12 +15,12 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: 64,
+          fontSize: 108,
           fontWeight: 700,
           fontFamily: "ui-serif, Georgia, serif",
         }}
       >
-        PN
+        P
       </div>
     ),
     { ...size },

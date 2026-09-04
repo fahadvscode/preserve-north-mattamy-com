@@ -36,7 +36,17 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
         ],
       },
+      {
+        source: "/favicon.svg",
+        headers: [
+          { key: "Content-Type", value: "image/svg+xml" },
+          { key: "Cache-Control", value: "public, max-age=86400, must-revalidate" },
+        ],
+      },
     ];
+  },
+  async rewrites() {
+    return [{ source: "/favicon.ico", destination: "/icon" }];
   },
   async redirects() {
     return [
